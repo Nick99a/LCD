@@ -148,6 +148,7 @@ class view_receipt(View):
             receipt.payment_term = request.POST.get("payment_term")
             receipt.id_tariff = Tariff.objects.get(id=request.POST.get("id_tariff"))
             receipt.id_tconversation = TelephoneConversation.objects.get(id=request.POST.get("id_tconversation"))
+            receipt.id_client = Client.objects.get(id=request.POST.get("id_client"))
             receipt.save()
             return HttpResponseRedirect("/receipt")
 
@@ -167,6 +168,7 @@ class view_receipt(View):
             que.payment_term = request.POST.get("payment_term")
             que.id_tariff = Tariff.objects.get(id=request.POST.get("id_tariff"))
             que.id_tconversation = TelephoneConversation.objects.get(id=request.POST.get("id_tconversation"))
+            que.id_client = Client.objects.get(id=request.POST.get("id_client"))
             que.save()
             return HttpResponseRedirect("/receipt")
 

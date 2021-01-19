@@ -18,6 +18,7 @@ class AddRec(forms.Form):
     payment_term = forms.DateField(label="Оплатить до")
     id_tariff = forms.IntegerField(label="Номер тарифа")
     id_tconversation = forms.IntegerField(label="Номер разговора")
+    id_client = forms.IntegerField(label="Номер клиента")
 
 class AddTC(forms.Form):
     date = forms.DateField(label="Дата")

@@ -16,7 +16,7 @@ class TelephoneConversationAdmin(admin.ModelAdmin):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('number','firstname','lastname','address','registration_date','id_receipt')
+    list_display = ('number','firstname','lastname','address','registration_date','id_receipt', 'id_client')
 
 @admin.register(Tariff)
 class TariffAdmin(admin.ModelAdmin):

@@ -36,6 +36,7 @@ class Client(models.Model):
     address = models.CharField(max_length=45)
     registration_date = models.DateField()
     id_receipt = models.ForeignKey('Receipt', on_delete=models.CASCADE)
+    id_client = models.ForeignKey('Receipt', on_delete=models.CASCADE)
     objects = models.Manager()
 
 class User(models.Model):
