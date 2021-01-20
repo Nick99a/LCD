@@ -210,7 +210,6 @@ class view_client(View):
             client.lastname = request.POST.get("lastname")
             client.address = request.POST.get("address")
             client.registration_date = request.POST.get("registration_date")
-            client.id_receipt = Receipt.objects.get(id=request.POST.get("id_receipt"))
             client.save()
             return HttpResponseRedirect("/client")
 
@@ -230,6 +229,5 @@ class view_client(View):
             que.lastname = request.POST.get("lastname")
             que.address = request.POST.get("address")
             que.registration_date = request.POST.get("registration_date")
-            que.id_receipt = Receipt.objects.get(id=request.POST.get("id_receipt"))
             que.save()
             return HttpResponseRedirect("/client")

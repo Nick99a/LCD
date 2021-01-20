@@ -17,8 +17,9 @@ class Receipt(models.Model):
     date = models.DateField()
     cost = models.FloatField()
     payment_term = models.DateField()
-    id_tariff = models.ForeignKey('Tariff', on_delete=models.CASCADE)
-    id_tconversation = models.ForeignKey('TelephoneConversation', on_delete=models.CASCADE)
+    id_tariff = models.ForeignKey('Tariff', on_delete=models.CASCADE, null=True)
+    id_tconversation = models.ForeignKey('TelephoneConversation', on_delete=models.CASCADE, null=True)
+    id_client = models.ForeignKey('Client', on_delete=models.CASCADE, null=True)
     objects = models.Manager()
 
 class TelephoneConversation(models.Model):
@@ -35,15 +36,13 @@ class Client(models.Model):
     lastname = models.CharField(max_length=45)
     address = models.CharField(max_length=45)
     registration_date = models.DateField()
-    id_receipt = models.ForeignKey('Receipt', on_delete=models.CASCADE)
-    id_client = models.ForeignKey('Receipt', on_delete=models.CASCADE)
     objects = models.Manager()
 
 class User(models.Model):
     login = models.CharField(max_length=45)
     password = models.CharField(max_length=45)
-    id_receipt = models.ForeignKey('Receipt', on_delete=models.CASCADE)
-    id_client = models.ForeignKey('Client', on_delete=models.CASCADE)
+    id_receipt = models.ForeignKey('Receipt', on_delete=models.CASCADE, null=True)
+    id_client = models.ForeignKey('Client', on_delete=models.CASCADE, null=True)
     objects = models.Manager()
 
 

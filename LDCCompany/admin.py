@@ -8,7 +8,7 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Receipt)
 class ReceiptAdmin(admin.ModelAdmin):
-    list_display = ('date','cost','payment_term','id_tariff','id_tconversation')
+    list_display = ('date','cost','payment_term','id_tariff','id_tconversation', 'id_client')
 
 @admin.register(TelephoneConversation)
 class TelephoneConversationAdmin(admin.ModelAdmin):
@@ -16,7 +16,7 @@ class TelephoneConversationAdmin(admin.ModelAdmin):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('number','firstname','lastname','address','registration_date','id_receipt', 'id_client')
+    list_display = ('number','firstname','lastname','address','registration_date')
 
 @admin.register(Tariff)
 class TariffAdmin(admin.ModelAdmin):

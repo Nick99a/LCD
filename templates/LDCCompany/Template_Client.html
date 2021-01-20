@@ -93,7 +93,6 @@
                 <th>Фамилия</th>
                 <th>Адресс</th>
                 <th>Дата регистрации</th>
-                <th>Номер квитанции</th>
             </tr>
         {% for i in data_show %}
             <tr align="center">
@@ -103,7 +102,6 @@
                 <td>{{ i.lastname }}</td>
                 <td>{{ i.address }}</td>
                 <td>{{ i.registration_date }}</td>
-                <td> <a href="{% url 'receipt' %}"> {{ i.id_receipt }}</td>
 
             </tr>
         {% endfor %}

@@ -30,9 +30,8 @@ class AddCl(forms.Form):
     number = forms.CharField(label="Номер телефона")
     firstname = forms.CharField(label="Имя")
     lastname = forms.CharField(label="Фамилия")
-    address = forms.CharField(label="Адресс")
+    address = forms.CharField(label="Адрес")
     registration_date = forms.DateField(label="Дата регистрации")
-    id_receipt = forms.IntegerField(label="Номер квитанции")
 
 class AddUser(forms.Form):
     login = forms.CharField(label="Логин")
